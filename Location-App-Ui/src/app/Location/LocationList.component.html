@@ -1,0 +1,95 @@
+﻿<div class="content-wrapper" style="min-height: 1170px; margin:0px">
+
+  <section class="content-header">
+    <h1>
+      Location
+      <small>Preview</small>
+    </h1>
+
+
+
+    <ol class="breadcrumb">
+      <li>
+        <a href="#">
+          <i class="fa fa-dashboard"></i> Home</a>
+      </li>
+      <li>
+        <a href="#">Admin</a>
+      </li>
+      <li class="active">Location</li>
+    </ol>
+  </section>
+
+
+  <section class="content">
+    <div class="col-md-12">
+        <!-- general form elements -->
+        <div class="box box-primary">
+            <div class="box-header with-border">
+              <h3 class="box-title">Location List</h3>
+                <div class="box-tools">
+                   <span class="pull-right">
+                    <a routerLink="/location" routerLinkActive="active" class="btn btn-primary btn-sm">Add Location</a>
+                  </span>
+                </div>
+            </div>
+
+            <!-- /.box-header -->
+            <div class="box-body">
+              <div class="row">
+                  <div class="col-md-12">
+                      <!--Page limit/ search option-->
+                      <div class="row">
+                          <div class="col-md-offset-10 col-md-2">
+                              <input #search class="search form-control" type="text" placeholder="Search..." (input)="onSearch(search.value)">
+                          </div>
+                      </div>
+                      <!--/.Page limit/ search option-->
+                      <div class="row" style="margin-top:10px;">
+                          <div class="col-md-12">
+                              <!--Smart table -->
+                              <ng2-smart-table [settings]="settings"  class="custom-tbl" [source]="source" (rowSelect)="onRowSelect($event)"></ng2-smart-table>
+                              <!--/.Smart table -->
+                              <!--Page Summery -->
+                              <div class="pagination-summery"> Showing {{ xStartPage }} to {{ xEndPage }} of {{ xRecordCount}} entries. </div>
+                              <!--/.Page Summery -->
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+            <!-- <div class="box-body table-responsive table-pad">
+              <table class="table table-hover">
+                <tbody>
+                  <tr>
+                    <th>Location Name</th>
+                    <th>Description</th>
+                    <th>Latitude</th>
+                    <th>Longitude</th>
+                    <th>
+                      Action
+                    </th>
+                  </tr>
+                  <tr *ngFor="let location of Locationlist">
+                    <td> {{location.name}} </td>
+                    <td> {{location.description}}</td>
+                    <td>{{location.latitude}} </td>
+                    <td> {{location.longitude}} </td>
+                    <td>
+                      <span>
+                        <a routerLink="/locationedit/{{location.id}}" routerLinkActive="active">Edit</a>
+                      </span>
+                      <span>
+                        <a (click)="deletelocation(location.id)"> Delete</a>
+                      </span>
+                    </td>
+                  </tr>
+    
+                </tbody>
+              </table>
+            </div> -->
+        </div>
+    </div>
+    <!--grid Location -->
+</section>
+</div>

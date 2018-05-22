@@ -1,0 +1,16 @@
+//create db name 
+use locationdb
+
+//List collection
+show collections
+
+//display collection data
+
+db.locations.find()
+
+//display collection data in format
+
+db.locations.find().pretty()
+
+//display collection data by id 
+db.locations.find({$and:[{"locationName": "New Delhi"}]}).pretty()
